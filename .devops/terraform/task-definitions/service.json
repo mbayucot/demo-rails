@@ -1,0 +1,26 @@
+[
+  {
+    "name": "web",
+    "image": "xxx.dkr.ecr.us-east-1.amazonaws.com/demo-api:xxx",
+    "portMappings": [
+      {
+        "hostPort": 80,
+        "containerPort": 80
+      }
+    ],
+    "logConfiguration": {
+      "logDriver": "awslogs",
+      "options": {
+        "awslogs-group": "demo-app-web",
+        "awslogs-region": "us-east-1",
+        "awslogs-stream-prefix": "demo-web"
+      }
+    },
+    "environment": [
+      {
+        "name": "RAILS_ENV",
+        "value": "production"
+      }
+    ]
+  }
+]
